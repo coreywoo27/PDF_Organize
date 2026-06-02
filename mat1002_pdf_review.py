@@ -12,16 +12,19 @@ from typing import Iterable
 from pypdf import PdfReader
 
 
+PROJECT_ROOT = Path(__file__).resolve().parent
+DEFAULT_PAPER_DIR = PROJECT_ROOT / "mat1002papers"
+
 DEFAULT_PDFS = [
-    "/Users/woo/Downloads/MAT1002 Final 2021(1).pdf",
-    "/Users/woo/Downloads/MAT1002 Final 2022.pdf",
-    "/Users/woo/Downloads/MAT1002 Final 2023(1).pdf",
-    "/Users/woo/Downloads/MAT1002 Final 2024(1) (1).pdf",
-    "/Users/woo/Downloads/MAT1002_Final_2025.pdf",
+    DEFAULT_PAPER_DIR / "MAT1002 Final 2021(1).pdf",
+    DEFAULT_PAPER_DIR / "MAT1002 Final 2022(2).pdf",
+    DEFAULT_PAPER_DIR / "MAT1002 Final 2023(1).pdf",
+    DEFAULT_PAPER_DIR / "MAT1002 Final 2024(1).pdf",
+    DEFAULT_PAPER_DIR / "MAT1002_Final_2025.pdf",
 ]
 
-DEFAULT_OUTPUT = "/Users/woo/Documents/New project/MAT1002_pdf_quick_review_report.md"
-DEFAULT_JSON_OUTPUT = "/Users/woo/Documents/New project/MAT1002_pdf_question_analysis.json"
+DEFAULT_OUTPUT = Path.cwd() / "MAT1002_pdf_quick_review_report.md"
+DEFAULT_JSON_OUTPUT = Path.cwd() / "MAT1002_pdf_question_analysis.json"
 
 
 @dataclass

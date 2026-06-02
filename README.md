@@ -37,3 +37,5 @@ App 会生成：
 ```bash
 python3 mat1002_pdf_review.py exam1.pdf exam2.pdf --output report.md --json-output analysis.json
 ```
+
+如果不传入 PDF 参数，命令行脚本会默认读取仓库内 `mat1002papers/` 目录中的五份 MAT1002 试卷。报告默认输出到运行命令时所在的当前目录，而不是某个固定的个人电脑路径。
