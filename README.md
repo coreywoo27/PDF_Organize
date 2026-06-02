@@ -11,18 +11,23 @@
 ## 安装依赖
 
 ```bash
+git clone https://github.com/coreywoo27/PDF_Organize.git
+cd PDF_Organize
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 ```
 
 ## 启动 App
 
 ```bash
-python3 pdf_review_app.py
+python3 -m pdf_review_app
 ```
 
 ## 使用流程
 
-1. 选择包含往年试卷 PDF 的文件夹。
+1. 选择包含往年试卷 PDF 的文件夹，例如仓库内置的 `mat1002papers/`，或你自己的 PDF 文件夹。
 2. 在列表中选择要分析的 PDF 文件。
 3. 选择报告输出文件夹。
 4. 点击 `Analyze Selected PDFs`。
@@ -35,7 +40,11 @@ App 会生成：
 原来的命令行脚本仍然可用：
 
 ```bash
-python3 mat1002_pdf_review.py exam1.pdf exam2.pdf --output report.md --json-output analysis.json
+python3 -m mat1002_pdf_review exam1.pdf exam2.pdf --output report.md --json-output analysis.json
 ```
 
 如果不传入 PDF 参数，命令行脚本会默认读取仓库内 `mat1002papers/` 目录中的五份 MAT1002 试卷。报告默认输出到运行命令时所在的当前目录，而不是某个固定的个人电脑路径。
+
+```bash
+python3 -m mat1002_pdf_review --output report.md --json-output analysis.json
+```
